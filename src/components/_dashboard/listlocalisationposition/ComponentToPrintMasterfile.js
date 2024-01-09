@@ -1,7 +1,7 @@
 import React from 'react';
-import './Surestarie.css';
+import './Masterfile.css';
 
-class ComponentToPrintSurest extends React.PureComponent {
+class ComponentToPrint extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,17 +13,15 @@ class ComponentToPrintSurest extends React.PureComponent {
     const {
       rows,
       client,
-      total,
-      numero,
-      bl,
-      voyage,
-      port,
-      size,
-      detention,
-      caution,
-      rembourser,
-      defalquer,
-      montantafacture
+      number,
+      typeconteneurid,
+      tailleconteneurid,
+      constructeur,
+      datefabrication,
+      dateentrerservice,
+      datederniereinspection,
+      // dernierconstat,
+      observation
     } = this.props;
     const { date } = this.state;
 
@@ -60,48 +58,54 @@ class ComponentToPrintSurest extends React.PureComponent {
             <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
           </div>
         </div>
-        <br />
         <h3 className="print-source" style={{ textAlign: 'center' }}>
-          RESTITUTION CAUTION
-        </h3>
-        <h3 className="print-source" style={{ textAlign: 'center' }}>
-          N° ....../20...
+          FICHE CONTENEUR
         </h3>
         <br />
         <br />
-        <p className="print-source" style={{ textAlign: 'right', margin: '2rem 1rem 3rem 0' }}>
-          <strong>Client</strong> : <span>{client}</span>
-        </p>
+        {/* <p className="print-source" style={{ textAlign: 'right', margin: '2rem 1rem 3rem 0' }}>
+          <strong> Client </strong> : <span>{client}</span>
+        </p> */}
+        {/* <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 1rem 4.5rem' }}>
+          <span>{client.address}</span>
+        </p> */}
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>N° Conteneur</strong> : <span>{numero}</span>
+          <strong>N° Conteneur</strong> : <span>{number}</span>
         </p>
-        {/* <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 6.8rem' }}> */}
+        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Taille Conteneur</strong> : <span>{size}</span>
+          {/* '0rem 1rem 0rem 6.8rem' */}
+          <strong>Type Conteneur</strong> : <span>{typeconteneurid}</span>
         </p>
+        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>N° B/L</strong> : <span>{bl}</span>
+          {/* 2rem 1rem 3rem 0 */}
+          <strong>Taille Conteneur</strong> : <span>{tailleconteneurid}</span>
         </p>
+        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>N° Voyage</strong> : <span>{voyage}</span>
+          {/* 1rem 1rem 0rem 1rem */}
+          <strong>Constructeur</strong> : <span>{constructeur}</span>
         </p>
+        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Port</strong> : <span>{port}</span>
+          {/* 1rem 1rem 0rem 1rem */}
+          <strong>Date Fabrication</strong> : <span>{datefabrication}</span>
         </p>
+        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Détention</strong> : <span>{detention}</span> Jours
+          {/* 1rem 1rem 0rem 1rem */}
+          <strong>Date Expiration</strong> : <span>{dateentrerservice}</span>
         </p>
+        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Montant Total</strong> : <span>{total}</span> CDF/USD
+          {/* 1rem 1rem 0rem 1rem */}
+          <strong>Date Inspection</strong> : <span>{datederniereinspection}</span>
         </p>
+        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Caution Versée</strong> : <span>{caution}</span> CDF/USD
-        </p>
-        <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Montant Défalqué</strong> : <span>{defalquer}</span> CDF/USD
-        </p>
-        <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Montant à Rembourser</strong> : <span>{rembourser}</span> CDF/USD
+          {/* 1rem 1rem 0rem 1rem */}
+          <strong>Observation </strong> : <span>{observation}</span>
         </p>
         {/* <div
           className="print-source"
@@ -109,20 +113,47 @@ class ComponentToPrintSurest extends React.PureComponent {
         >
           <table className="print-source" style={{ width: '100%' }}>
             <thead>
-              <th>N° Item</th>
-              <th>Descriptions</th>
-              <th>Poids/Volume</th>
-              <th>Montant</th>
+              <th>N° Conteneur</th>
+              <th>Type/Conteneur</th>
+              <th>Taille/Conteneur</th>
+              <th>Contructeur</th>
             </thead>
             <tbody style={{ width: '100%' }}>
               {rows.map((value, key) => {
-                const { number, description, weight, price } = value;
+                const { number, typeconteneurid, tailleconteneurid, constructeur } = value;
                 return (
                   <tr key={key} style={{ textAlign: 'center' }}>
                     <td>{number}</td>
-                    <td>{description}</td>
-                    <td>{weight}</td>
-                    <td>{price}</td>
+                    <td>{typeconteneurid}</td>
+                    <td>{tailleconteneurid}</td>
+                    <td>{constructeur}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div> */}
+        {/* <div
+          className="print-source"
+          style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem', width: '100%' }}
+        >
+          <table className="print-source" style={{ width: '100%' }}>
+            <thead>
+              <th>Date Fabrication</th>
+              <th>Date Entrer en Service</th>
+              <th>Date Inspection</th>
+              <th>Constat</th>
+            </thead>
+            <tbody style={{ width: '100%' }}>
+              {rows.map((value, key) => {
+                const { datefabrication, dateentrerservice, datederniereinspection, constat } =
+                  value;
+                return (
+                  <tr key={key} style={{ textAlign: 'center' }}>
+                    <td>{datefabrication}</td>
+                    <td>{dateentrerservice}</td>
+                    <td>{datederniereinspection}</td>
+                    <td>{constat}</td>
                   </tr>
                 );
               })}
@@ -133,72 +164,20 @@ class ComponentToPrintSurest extends React.PureComponent {
           className="print-source"
           style={{
             position: 'absolute',
-            bottom: '35%',
+            bottom: '15%',
             right: 0,
             textAlign: 'right',
-            margin: '1rem 1rem 1rem 0'
-          }}
-        >
-          <p>
-            <strong>Montant Net à Payer</strong> : {montantafacture} CDF/USD
-          </p>
-          {/* <br /> */}
-          <p>
-            <strong>Date </strong> : {date}
-          </p>
-        </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div>
-          <div>
-            <p
-              className="print-source"
-              style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}
-            >
-              {/* <strong>NGUNGA WAMPILUKULA</strong> */}
-              <strong>Chef de Service CTNR</strong>
-            </p>
-          </div>
-          <div>
-            <p
-              className="print-source"
-              style={{ textAlign: 'right', margin: '0rem 1rem 0rem 1rem' }}
-            >
-              {/* <strong>NGUNGA WAMPILUKULA</strong> */}
-              <strong>Sous Directeur OPS</strong>
-            </p>
-          </div>
-        </div>
-        <div
-          className="print-source"
-          style={{
-            position: 'absolute',
-            bottom: '15%',
-            // right: 0,
-            textAlign: 'left',
-            margin: '0rem 1rem 0rem 1rem'
-            // margin: '3rem 1rem 3rem 0'
+            margin: '3rem 1rem 3rem 0'
           }}
         >
           {/* <p>
-            <strong>N.B:</strong> Facture payable 15 jours francs à compter de la date d'arrivée du
-            navire
+            <strong>TVA</strong>
+          </p> */}
+          {/* <p>
+            <strong>Montant Net</strong> : {total} FC
           </p> */}
           <p>
-            <strong>Compte n° :</strong> 05100-05101-03006717401-55/USD
-          </p>
-          <p>
-            <strong>Banque :</strong> RAWBANK
-          </p>
-          <p>
-            <strong>Code Swift :</strong> NCDCDKI
+            <strong> Date </strong> : {date}
           </p>
         </div>
         <div
@@ -215,7 +194,7 @@ class ComponentToPrintSurest extends React.PureComponent {
           {' '}
           <hr style={{ opacity: 1 }} />
           <p style={{ color: 'blue' }}>
-            Société Anonyme Unipersonnelle avec conseil d'administration
+            Société Anonyme Unipersonnelle avec Conseil d'Administration
           </p>
           <p style={{ color: 'blue' }}>au Capital de 16.474.900.000 CDF</p>
           <p>N°RCCM CD/RCCM/14-B-3622 - ID.NAT. : 01-715-A06030E - N°IMPOT : A0700620H</p>
@@ -233,4 +212,4 @@ class ComponentToPrintSurest extends React.PureComponent {
   }
 }
 
-export default ComponentToPrintSurest;
+export default ComponentToPrint;

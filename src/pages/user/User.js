@@ -325,21 +325,21 @@ export default function User() {
                 onChange={(e) => setNameInput(e.target.value)}
               />
               <TextField
-                label="Saisissez username "
+                label="Saisissez votre Fonction "
                 variant="outlined"
                 style={{ marginTop: 20, marginBottom: 20 }}
                 value={usernameInput}
                 onChange={(e) => setUsernameInput(e.target.value)}
               />
               <TextField
-                label="Saisissez l'email du user"
+                label="Saisissez l'Adresse Email "
                 variant="outlined"
                 style={{ marginTop: 20, marginBottom: 20 }}
                 value={emailInput}
                 onChange={(e) => setEmailInput(e.target.value)}
               />
               <TextField
-                label="Saisissez le password du user"
+                label="Saisissez le Mot de Passe"
                 variant="outlined"
                 style={{ marginTop: 20, marginBottom: 20 }}
                 value={passwordInput}

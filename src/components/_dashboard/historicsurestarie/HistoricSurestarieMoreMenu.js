@@ -100,6 +100,7 @@ export default function UserMoreMenu({
   facturermod,
   remboursermod,
   statutmod,
+  montantfacturermod,
   totalmod,
   sendInformation
 }) {
@@ -963,6 +964,7 @@ export default function UserMoreMenu({
                     rembourser={surestarierembourserInput}
                     montantafacture={surestariefacturerInput}
                     total={surestarietotalInput}
+                    defalquer={surestarietotalInput}
                     // proprietaireid={reparaownerInput}
                     // paysname={reparapaysInput}
                     // taux={reparatauxInput}

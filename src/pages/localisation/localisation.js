@@ -386,7 +386,7 @@ export default function Masterfile() {
               />
             </div>
             <div className="input-label-wrapper">
-              Date de Départ:{' '}
+              Date :{' '}
               <TextField
                 className="basic-input"
                 // label="Saisissez la date de Fabrication"

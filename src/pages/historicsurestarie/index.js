@@ -522,6 +522,7 @@ export default function User() {
                               facturermod={montantafacture}
                               remboursermod={rembourser}
                               statutmod={statut}
+                              montantfacturermod={montantafacture}
                               totalmod={total}
                               sendInformation={(value) => isDataChange(value)}
                             />

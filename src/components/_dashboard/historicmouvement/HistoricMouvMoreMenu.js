@@ -77,6 +77,7 @@ export default function UserMoreMenu({
   tailleMouvement,
   typeMouvement,
   voyageMouvement,
+  portdechargementMouvement,
   blMouvement,
   navireMouvement,
   etaMouvement,
@@ -160,20 +161,21 @@ export default function UserMoreMenu({
   /**
    * Informations for Port
    */
-  // const [mouvportTab, setMouvPortTab] = useState([]);
-  // const [mouvportInput, setMouvPortInput] = useState(portMouvement);
+  const [mouvportdechargementTab, setMouvPortDechargementTab] = useState([]);
+  const [mouvportdechargementInput, setMouvPortDechargementInput] =
+    useState(portdechargementMouvement);
 
-  // useEffect(() => {
-  //   axios(`${process.env.REACT_APP_BASE_URL}/port/`, {
-  //     headers: {
-  //       Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`
-  //     }
-  //   })
-  //     .then((value) => {
-  //       setMouvPortTab(value.data);
-  //     })
-  //     .catch(() => {});
-  // }, []);
+  useEffect(() => {
+    axios(`${process.env.REACT_APP_BASE_URL}/port/`, {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`
+      }
+    })
+      .then((value) => {
+        setMouvPortDechargementTab(value.data);
+      })
+      .catch(() => {});
+  }, []);
 
   /**
    * Informations for Taille
@@ -348,6 +350,7 @@ export default function UserMoreMenu({
           taille: mouvtailleInput,
           type: mouvtypeInput,
           voyage: mouvvoyageInput,
+          portdechargement: mouvportdechargementInput,
           bl: mouvblInput,
           navire: mouvnavireInput,
           eta: mouvetaInput,
@@ -375,6 +378,7 @@ export default function UserMoreMenu({
     setMouvTailleInput('');
     setMouvTypeInput('');
     setMouvVoyageInput('');
+    setMouvPortDechargementInput('');
     setMouvBlInput('');
     setMouvNavireInput('');
     setMouvEtaInput('');
@@ -680,6 +684,25 @@ export default function UserMoreMenu({
                   />
                 </div>
                 <div className="input-label-wrapper">
+                  Port Déchargement:{' '}
+                  <Autocomplete
+                    className="combo-box-completion"
+                    options={mouvportdechargementTab}
+                    onChange={(event, newType) => {
+                      if (newType) {
+                        setMouvPortDechargementInput(newType.name);
+                      } else {
+                        setMouvPortDechargementInput(null);
+                      }
+                    }}
+                    getOptionLabel={(option) => option.name}
+                    style={{ width: 400 }}
+                    renderInput={(params) => (
+                      <TextField {...params} label="Sélectionner le Port" variant="outlined" />
+                    )}
+                  />
+                </div>
+                <div className="input-label-wrapper">
                   Contenu:{' '}
                   <TextField
                     className="basic-input"
@@ -836,6 +859,7 @@ export default function UserMoreMenu({
                   taille={mouvtailleInput}
                   type={mouvtypeInput}
                   voyage={mouvvoyageInput}
+                  portdechargement={mouvportdechargementInput}
                   bl={mouvblInput}
                   navire={mouvnavireInput}
                   eta={mouvetaInput}

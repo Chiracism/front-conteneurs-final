@@ -54,6 +54,7 @@ const TABLE_HEAD = [
   { id: 'voyage', label: 'N° Voyage', alignRight: false },
   { id: 'bl', label: 'N° B/L', alignRight: false },
   // { id: 'constructeur', label: 'Constructeur', alignRight: false },
+  { id: 'portdechargement', label: 'Port Déchargement', alignRight: false },
   { id: 'navire', label: 'Navire', alignRight: false },
   { id: 'eta', label: 'ETA', alignRight: false },
   { id: 'contenu', label: 'Contenu', alignRight: false },
@@ -307,6 +308,7 @@ export default function User() {
                         type,
                         voyage,
                         bl,
+                        portdechargement,
                         navire,
                         eta,
                         contenu,
@@ -370,6 +372,13 @@ export default function User() {
                             <Stack direction="row" justifyContent="center" spacing={2}>
                               <Typography variant="subtitle2" noWrap>
                                 {bl}
+                              </Typography>
+                            </Stack>
+                          </TableCell>
+                          <TableCell component="th" scope="row" padding="none">
+                            <Stack direction="row" justifyContent="center" spacing={2}>
+                              <Typography variant="subtitle2" noWrap>
+                                {portdechargement}
                               </Typography>
                             </Stack>
                           </TableCell>
@@ -464,6 +473,7 @@ export default function User() {
                               tailleMouvement={taille}
                               typeMouvement={type}
                               voyageMouvement={voyage}
+                              portdechargementMouvement={portdechargement}
                               blMouvement={bl}
                               navireMouvement={navire}
                               etaMouvement={eta}

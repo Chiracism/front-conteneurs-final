@@ -43,6 +43,7 @@ export default function Mouvement() {
   const [mouvnumeromemoInput, setMouvNumeroMemoInput] = useState('');
   // const [mouvagenceInput, setMouvAgenceInput] = useState('');
   const [mouvcautionInput, setMouvCautionInput] = useState('');
+  // const [mouvportdechargementInput, setMouvPortDechargementInput] = useState('');
   const [mouvdestinationInput, setMouvDestinationInput] = useState('');
   const [mouvdatesInput, setMouvDatesInput] = useState('');
   const [mouvvoyageInput, setMouvVoyageInput] = useState('');
@@ -85,6 +86,7 @@ export default function Mouvement() {
           taille: mouvsizeInput,
           type: mouvtypeInput,
           voyage: mouvvoyageInput,
+          portdechargement: mouvportdechargementInput,
           bl: mouvblInput,
           navire: mouvnavireInput,
           eta: mouvetaInput,
@@ -111,6 +113,7 @@ export default function Mouvement() {
     setMouvSizeInput('');
     setMouvTypeInput('');
     setMouvVoyageInput('');
+    setMouvPortDechargementInput('');
     setMouvBlInput('');
     setMouvNavireInput('');
     setMouvEtaInput('');
@@ -164,8 +167,8 @@ export default function Mouvement() {
   /**
    * Informations for Port
    */
-  const [mouvportTab, setMouvPortTab] = useState([]);
-  const [mouvportInput, setMouvPortInput] = useState(null);
+  const [mouvportdechargementTab, setMouvPortDechargementTab] = useState([]);
+  const [mouvportdechargementInput, setMouvPortDechargementInput] = useState(null);
 
   useEffect(() => {
     axios(`${process.env.REACT_APP_BASE_URL}/port/`, {
@@ -174,7 +177,7 @@ export default function Mouvement() {
       }
     })
       .then((value) => {
-        setMouvPortTab(value.data);
+        setMouvPortDechargementTab(value.data);
       })
       .catch(() => {});
   }, []);
@@ -642,6 +645,29 @@ export default function Mouvement() {
           </Box>
           <Box className="box-wrapper">
             <div className="input-label-wrapper">
+              Port Déchargement:{' '}
+              <Autocomplete
+                className="combo-box-completion"
+                options={mouvportdechargementTab}
+                onChange={(event, newType) => {
+                  if (newType) {
+                    setMouvPortDechargementInput(newType.name);
+                  } else {
+                    setMouvPortDechargementInput(null);
+                  }
+                }}
+                getOptionLabel={(option) => option.name}
+                style={{ width: 400 }}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="Sélectionner le Port Déchargement"
+                    variant="outlined"
+                  />
+                )}
+              />
+            </div>
+            <div className="input-label-wrapper">
               Navire:{' '}
               <Autocomplete
                 className="combo-box-completion"
@@ -825,6 +851,7 @@ export default function Mouvement() {
               number={mouvnumberInput}
               taille={mouvsizeInput}
               type={mouvtypeInput}
+              portdechargement={mouvportdechargementInput}
               bl={mouvblInput}
               voyage={mouvvoyageInput}
               navire={mouvnavireInput}

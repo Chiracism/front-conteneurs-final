@@ -40,7 +40,7 @@ import { UserListHead } from '../../components/_dashboard/user';
 import {
   HistoricListToolbar,
   HistoricMoreMenu
-} from '../../components/_dashboard/listlocalisation';
+} from '../../components/_dashboard/listlocalisationposition';
 
 // import { numberValidation } from '../../utils/validate';
 import { CheckUserAuth } from '../../utils/auth';
@@ -89,20 +89,13 @@ function applySortFilter(array, comparator, query) {
     return a[1] - b[1];
   });
 
-  if (query.filterName || query.filterNames || query.filterStartDate || query.filterEndDate) {
+  if (query.filterName || query.filterStartDate || query.filterEndDate) {
     let dataFiltered = null;
 
     if (query.filterName) {
       dataFiltered = filter(
         array,
-        (_user) => _user.numero.toLowerCase().indexOf(query.filterName.toLowerCase()) !== -1
-      );
-    }
-
-    if (query.filterNames) {
-      dataFiltered = filter(
-        array,
-        (_user) => _user.position.toLowerCase().indexOf(query.filterNames.toLowerCase()) !== -1
+        (_user) => _user.position.toLowerCase().indexOf(query.filterName.toLowerCase()) !== -1
       );
     }
 
@@ -252,15 +245,6 @@ export default function Countrie() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = setHistoric.map((n) => n.numero);
-      setSelected(newSelecteds);
-      return;
-    }
-    setSelected([]);
-  };
-
-  const handleSelectAllClick2 = (event) => {
-    if (event.target.checked) {
       const newSelecteds = setHistoric.map((n) => n.position);
       setSelected(newSelecteds);
       return;
@@ -268,25 +252,16 @@ export default function Countrie() {
     setSelected([]);
   };
 
-  const handleClick = (event, numero) => {
-    const selectedIndex = selected.indexOf(numero);
-    let newSelected = [];
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, numero);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
-      );
-    }
-    setSelected(newSelected);
-  };
+  // const handleSelectAllClick2 = (event) => {
+  //   if (event.target.checked) {
+  //     const newSelecteds = setHistoric.map((n) => n.position);
+  //     setSelected(newSelecteds);
+  //     return;
+  //   }
+  //   setSelected([]);
+  // };
 
-  const handleClick2 = (event, position) => {
+  const handleClick = (event, position) => {
     const selectedIndex = selected.indexOf(position);
     let newSelected = [];
     if (selectedIndex === -1) {
@@ -304,6 +279,24 @@ export default function Countrie() {
     setSelected(newSelected);
   };
 
+  // const handleClick2 = (event, position) => {
+  //   const selectedIndex = selected.indexOf(position);
+  //   let newSelected = [];
+  //   if (selectedIndex === -1) {
+  //     newSelected = newSelected.concat(selected, position);
+  //   } else if (selectedIndex === 0) {
+  //     newSelected = newSelected.concat(selected.slice(1));
+  //   } else if (selectedIndex === selected.length - 1) {
+  //     newSelected = newSelected.concat(selected.slice(0, -1));
+  //   } else if (selectedIndex > 0) {
+  //     newSelected = newSelected.concat(
+  //       selected.slice(0, selectedIndex),
+  //       selected.slice(selectedIndex + 1)
+  //     );
+  //   }
+  //   setSelected(newSelected);
+  // };
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -317,9 +310,9 @@ export default function Countrie() {
     setFilterName(event.target.value);
   };
 
-  const handleFilterByNames = (event) => {
-    setFilterNames(event.target.value);
-  };
+  // const handleFilterByNames = (event) => {
+  //   setFilterNames(event.target.value);
+  // };
 
   const handleFilterStartDate = (event) => {
     setFilterStartDate(event.target.value);
@@ -333,7 +326,7 @@ export default function Countrie() {
 
   const filteredHistoric = applySortFilter(historic, getComparator(order, orderBy), {
     filterName,
-    filterNames,
+    // filterNames,
     filterStartDate,
     filterEndDate
   });
@@ -345,7 +338,7 @@ export default function Countrie() {
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            Liste des Localisations
+            Liste des Localisations par Position
           </Typography>
           {/* <Button
             variant="contained"
@@ -397,11 +390,11 @@ export default function Countrie() {
           <HistoricListToolbar
             numSelected={selected.length}
             filterName={filterName}
-            filterNames={filterNames}
+            // filterNames={filterNames}
             filterStartDate={filterStartDate}
             filterEndDate={filterEndDate}
             onFilterName={handleFilterByName}
-            onFilterNames={handleFilterByNames}
+            // onFilterNames={handleFilterByNames}
             onFilterStartDate={handleFilterStartDate}
             onFilterEndDate={handleFilterEndDate}
           />
@@ -436,7 +429,7 @@ export default function Countrie() {
                         createdAt,
                         name
                       } = row;
-                      const isItemSelected = selected.indexOf(numero) !== -1;
+                      const isItemSelected = selected.indexOf(position) !== -1;
 
                       return (
                         <TableRow
@@ -573,7 +566,7 @@ export default function Countrie() {
                     <TableRow>
                       <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
                         <SearchNotFound searchQuery={filterName} />
-                        <SearchNotFound searchQuery={filterNames} />
+                        {/* <SearchNotFound searchQuery={filterNames} /> */}
                       </TableCell>
                     </TableRow>
                   </TableBody>

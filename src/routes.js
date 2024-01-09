@@ -4,7 +4,7 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import DashboardLayout from './layouts/dashboard';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 
-// Pages
+// Pages Ok
 import Login from './pages/Login';
 import DashboardApp from './pages/DashboardApp';
 import User from './pages/user/User';
@@ -25,6 +25,7 @@ import NewListeMasterFiles from './pages/newlistMasterFiles';
 import NewMouvement from './pages/newmouvement/mouvement';
 import Localisation from './pages/localisation/localisation';
 import ListeLocalisation from './pages/listlocalisation';
+import ListeLocalisationPosition from './pages/listlocalisationposition';
 import Categorie from './pages/categorie';
 import Client from './pages/client';
 import Countrie from './pages/countrie';
@@ -97,6 +98,7 @@ export default function Router() {
         { path: 'newlistMasterFiles', element: <NewListeMasterFiles /> },
         { path: 'listeconteneur', element: <Listeconteneur /> },
         { path: 'listlocalisation', element: <ListeLocalisation /> },
+        { path: 'listlocalisationposition', element: <ListeLocalisationPosition /> },
         // { path: 'newsurestarie', element: <NewSurestarie /> },
         { path: 'newsurestaries', element: <NewSurestaries /> },
         { path: 'consultat', element: <Consultat /> }

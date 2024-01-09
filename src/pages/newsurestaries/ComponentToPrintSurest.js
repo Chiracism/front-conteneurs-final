@@ -10,8 +10,21 @@ class ComponentToPrintSurest extends React.PureComponent {
   }
 
   render() {
-    const { rows, client, total, numero, port, size, bl, voyage, detention, caution, rembourser } =
-      this.props;
+    const {
+      rows,
+      client,
+      total,
+      numero,
+      port,
+      size,
+      bl,
+      voyage,
+      detention,
+      caution,
+      defalquer,
+      rembourser,
+      montantafacture
+    } = this.props;
     const { date } = this.state;
 
     return (
@@ -49,7 +62,7 @@ class ComponentToPrintSurest extends React.PureComponent {
         </div>
         <br />
         <h3 className="print-source" style={{ textAlign: 'center' }}>
-          RESTITUTION CAUTION AVEC OU SANS SURESTARIE
+          RESTITUTION CAUTION
         </h3>
         <h3 className="print-source" style={{ textAlign: 'center' }}>
           N° ....../20...
@@ -76,16 +89,19 @@ class ComponentToPrintSurest extends React.PureComponent {
           <strong>Port</strong> : <span>{port}</span>
         </p>
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Détention</strong> : <span>{detention}</span>Jours
+          <strong>Détention</strong> : <span>{detention}</span> Jours
+        </p>
+        <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
+          <strong>Montant Total</strong> : <span>{total}</span> CDF/USD
         </p>
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           <strong>Caution Versée</strong> : <span>{caution}</span> CDF/USD
         </p>
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Montant à Rembourser</strong> : <span>{rembourser}</span> CDF/USD
+          <strong>Montant Défalqué</strong> : <span>{defalquer}</span> CDF/USD
         </p>
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Total Net</strong> : <span>{total}</span> CDF/USD
+          <strong>Montant à Rembourser</strong> : <span>{rembourser}</span> CDF/USD
         </p>
         {/* <div
           className="print-source"
@@ -124,7 +140,7 @@ class ComponentToPrintSurest extends React.PureComponent {
           }}
         >
           <p>
-            <strong>Montant Net à Payer</strong> : {total} CDF/USD
+            <strong>Montant Net à Payer</strong> : {montantafacture} CDF/USD
           </p>
           {/* <br /> */}
           <p>

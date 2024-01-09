@@ -80,6 +80,7 @@ export default function Mouvement() {
   const [surestariestatutInput, setSurestarieStatutInput] = useState('');
   const [surestarieblInput, setSurestarieBlInput] = useState('');
   const [surestarievoyageInput, setSurestarieVoyageInput] = useState('');
+  const [surestariedefalquerInput, setSurestarieDefalquerInput] = useState('');
 
   const reloadPage = () => {
     window.location.reload();
@@ -633,6 +634,10 @@ export default function Mouvement() {
       setSurestarieSizeInput(0);
     }
   }, [surestariesizeInput]);
+
+  useEffect(() => {
+    setSurestarieDefalquerInput(surestariecautionverseeInput - surestariefraisInput);
+  }, [surestariecautionverseeInput, surestariefraisInput]);
 
   useEffect(() => {
     // Get User Auth
@@ -1249,7 +1254,7 @@ export default function Mouvement() {
               />
             </div>
             <div className="input-label-wrapper">
-              Frais:{' '}
+              Montant Défalqué:{' '}
               <TextField
                 className="basic-input"
                 label="Frais à payer"
@@ -1294,10 +1299,22 @@ export default function Mouvement() {
                 variant="outlined"
                 value={surestariefacturerInput}
                 onChange={(e) => {
-                  setSurestarieTotalInput(e.target.value);
+                  setSurestarieFacturerInput(e.target.value);
                 }}
               />
             </div>
+            {/* <div className="input-label-wrapper">
+              Montant Défalqué:{' '}
+              <TextField
+                className="basic-input"
+                label="Montant Défalqué "
+                variant="outlined"
+                value={surestariedefalquerInput}
+                onChange={(e) => {
+                  setSurestarieDefalquerInput(e.target.value);
+                }}
+              />
+            </div> */}
             <div className="input-label-wrapper">
               Montant à Facturer:{' '}
               <TextField
@@ -1334,8 +1351,11 @@ export default function Mouvement() {
               port={surestarieportInput}
               size={surestariesizeInput}
               caution={surestariecautionverseeInput}
+              defalquer={surestariefraisInput}
               rembourser={surestarierembourserInput}
-              total={surestarietotalInput}
+              montantafacture={surestarietotalInput}
+              total={surestariefraisInput}
+              totals={surestariefacturerInput}
               rows={[]}
             />
           </div>

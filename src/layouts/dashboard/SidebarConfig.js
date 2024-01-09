@@ -33,21 +33,11 @@ export default function SidebarConfig() {
           path: '/dashboard/app',
           icon: getIcon(pieChart2Fill)
         },
-        // {
-        //   title: 'Master File',
-        //   path: '/dashboard/masterfile',
-        //   icon: getIcon(fileTextFill)
-        // },
         {
           title: 'MasterFile',
           path: '/dashboard/newmasterfile',
           icon: getIcon(fileTextFill)
         },
-        // {
-        //   title: 'Mouvement',
-        //   path: '/dashboard/mouvement',
-        //   icon: getIcon(fileTextFill)
-        // },
         {
           title: 'Mouvement',
           path: '/dashboard/newmouvement',
@@ -58,31 +48,6 @@ export default function SidebarConfig() {
           path: '/dashboard/reparation',
           icon: getIcon(fileTextFill)
         },
-        // {
-        //   title: 'Conteneur',
-        //   path: '/dashboard/listeconteneur',
-        //   icon: getIcon(fileTextFill)
-        // },
-        // {
-        //   title: 'formulaire importation',
-        //   path: '/dashboard/importation',
-        //   icon: getIcon(fileTextFill)
-        // },
-        // {
-        //   title: 'formulaire exportation',
-        //   path: '/dashboard/exportation',
-        //   icon: getIcon(fileTextFill)
-        // },
-        // {
-        //   title: 'Surestarie',
-        //   path: '/dashboard/surestarie',
-        //   icon: getIcon(fileTextFill)
-        // },
-        // {
-        //   title: 'NewSurestarie',
-        //   path: '/dashboard/newsurestarie',
-        //   icon: getIcon(fileTextFill)
-        // },
         {
           title: 'Surestaries',
           path: '/dashboard/newsurestaries',
@@ -108,6 +73,11 @@ export default function SidebarConfig() {
           path: '/dashboard/listlocalisation',
           icon: getIcon(listFill)
         },
+        // {
+        //   title: 'Historique Localisation Position',
+        //   path: '/dashboard/listlocalisationposition',
+        //   icon: getIcon(listFill)
+        // },
         {
           title: 'Historique MasterFiles',
           path: '/dashboard/newlistMasterFiles',
@@ -435,16 +405,21 @@ export default function SidebarConfig() {
           path: '/dashboard/app',
           icon: getIcon(pieChart2Fill)
         },
+        // {
+        //   title: 'Mouvement',
+        //   path: '/dashboard/newmouvement',
+        //   icon: getIcon(fileTextFill)
+        // },
         {
-          title: 'Mouvement',
-          path: '/dashboard/newmouvement',
-          icon: getIcon(fileTextFill)
-        },
-        {
-          title: 'Historique Mouvements',
+          title: 'Historique des Mouvements',
           path: '/dashboard/historicmouvement',
           icon: getIcon(listFill)
         }
+        // {
+        //   title: 'Historique Localisations',
+        //   path: '/dashboard/listlocalisation',
+        //   icon: getIcon(listFill)
+        // }
       ];
     } else if (user && user.role_id === 6) {
       sidebarConfig = [
@@ -453,14 +428,19 @@ export default function SidebarConfig() {
           path: '/dashboard/app',
           icon: getIcon(pieChart2Fill)
         },
-        {
-          title: 'Surestarie',
-          path: '/dashboard/newsurestaries',
-          icon: getIcon(fileTextFill)
-        },
+        // {
+        //   title: 'Surestarie',
+        //   path: '/dashboard/newsurestaries',
+        //   icon: getIcon(fileTextFill)
+        // },
         {
           title: 'Historique Surestaries',
           path: '/dashboard/historicsurestarie',
+          icon: getIcon(listFill)
+        },
+        {
+          title: 'Historique des Mouvements',
+          path: '/dashboard/historicmouvement',
           icon: getIcon(listFill)
         }
       ];

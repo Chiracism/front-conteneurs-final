@@ -16,6 +16,7 @@ class ComponentToPrintMouv extends React.PureComponent {
       taille,
       type,
       bl,
+      portdechargement,
       voyage,
       navire,
       eta,
@@ -58,8 +59,8 @@ class ComponentToPrintMouv extends React.PureComponent {
             className="print-source"
             style={{ textAlign: 'center', color: 'blue', flexGrow: 0.2 }}
           >
-            <p style={{ fontWeight: 700, fontSize: '22px' }}>Republique Démocratique du Congo</p>
-            <p style={{ fontWeight: 700, fontSize: '22px' }}>LIGNES MARITIMES CONGOLAISES, SA</p>
+            <p style={{ fontWeight: 700, fontSize: '22px' }}>République Démocratique du Congo</p>
+            <p style={{ fontWeight: 700, fontSize: '22px' }}>LIGNES MARITIMES CONGOLAISES SA</p>
             <p style={{ fontWeight: 600, fontSize: '22px' }}>Armement National</p>
             <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
           </div>
@@ -85,6 +86,10 @@ class ComponentToPrintMouv extends React.PureComponent {
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* 2rem 1rem 3rem 0 */}
           <strong>Type Conteneur</strong> : <span>{type}</span>
+        </p>
+        <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
+          {/* 1rem 1rem 0rem 1rem */}
+          <strong>Port de Déchargement</strong> : <span>{portdechargement}</span>
         </p>
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* 1rem 1rem 0rem 1rem */}
@@ -128,7 +133,7 @@ class ComponentToPrintMouv extends React.PureComponent {
         </p>
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* 1rem 1rem 0rem 1rem */}
-          <strong>Date de Paiement Caution</strong> : <span>{dates}</span>
+          <strong>Date </strong> : <span>{dates}</span>
         </p>
         <br />
         <br />

@@ -89,7 +89,7 @@ class ComponentToPrint extends React.PureComponent {
           <strong>Export.</strong> : <span>{exportatL}</span>
         </p>
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
-          <strong>Date de Départ</strong> : <span>{datedepartL}</span>
+          <strong>Date </strong> : <span>{datedepartL}</span>
         </p>
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           <strong>navire</strong> : <span>{navireL}</span>
