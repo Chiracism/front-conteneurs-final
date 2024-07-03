@@ -15,19 +15,44 @@ class ComponentToPrint extends React.PureComponent {
 
     return (
       <div>
-        <div className="print-source" style={{ display: 'flex', alignItems: 'center' }}>
+        <div
+          className="print-source"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'center'
+          }}
+        >
           <img
             className="print-source"
-            src="/static/logo_lmc.JPG"
+            src="/static/logoDIRPROVKC.JPG"
             alt="Logo"
-            style={{ width: 150, height: 150 }}
+            justifyContent="center"
+            position="center"
+            alignItems="center"
+            style={{ width: 320, height: 150, justifyContent: 'center', position: 'center' }}
           />
-          <div className="print-source" style={{ textAlign: 'center', color: 'blue', flexGrow: 1 }}>
+          <img
+            className="print-source"
+            src="/static/filigrane.JPG"
+            alt="Logo"
+            style={{
+              position: 'absolute',
+              zIndex: -1,
+              opacity: 0.1,
+              left: 75,
+              top: 250,
+              width: 600,
+              height: 600
+            }}
+          />
+          {/* <div className="print-source" style={{ textAlign: 'center', color: 'blue', flexGrow: 1 }}>
             <p style={{ fontWeight: 700, fontSize: '22px' }}>République Démocratique du Congo</p>
             <p style={{ fontWeight: 700, fontSize: '22px' }}>LIGNES MARITIMES CONGOLAISES, SA</p>
             <p style={{ fontWeight: 600, fontSize: '22px' }}>Armement National</p>
             <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
-          </div>
+          </div> */}
         </div>
         <h3 className="print-source" style={{ textAlign: 'center' }}>
           HISTORIQUE DES MOUVEMENTS CONTENEURS

@@ -89,7 +89,13 @@ function applySortFilter(array, comparator, query) {
     return a[1] - b[1];
   });
 
-  if (query.filterName || query.filterNames || query.filterStartDate || query.filterEndDate) {
+  if (
+    query.filterName ||
+    query.filterNames ||
+    query.filterTaille ||
+    query.filterStartDate ||
+    query.filterEndDate
+  ) {
     let dataFiltered = null;
 
     if (query.filterName) {
@@ -103,6 +109,13 @@ function applySortFilter(array, comparator, query) {
       dataFiltered = filter(
         array,
         (_user) => _user.position.toLowerCase().indexOf(query.filterNames.toLowerCase()) !== -1
+      );
+    }
+
+    if (query.filterTaille) {
+      dataFiltered = filter(
+        array,
+        (_user) => _user.taille.toLowerCase().indexOf(query.filterName.toLowerCase()) !== -1
       );
     }
 
@@ -153,6 +166,7 @@ export default function Countrie() {
   const [orderBy, setOrderBy] = useState('id');
   const [filterName, setFilterName] = useState('');
   const [filterNames, setFilterNames] = useState('');
+  const [filterTaille, setFilterTaille] = useState('');
   const [filterStartDate, setFilterStartDate] = useState('');
   const [filterEndDate, setFilterEndDate] = useState('');
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -321,6 +335,10 @@ export default function Countrie() {
     setFilterNames(event.target.value);
   };
 
+  const handleFilterByTaille = (event) => {
+    setFilterTaille(event.target.value);
+  };
+
   const handleFilterStartDate = (event) => {
     setFilterStartDate(event.target.value);
   };
@@ -334,6 +352,7 @@ export default function Countrie() {
   const filteredHistoric = applySortFilter(historic, getComparator(order, orderBy), {
     filterName,
     filterNames,
+    filterTaille,
     filterStartDate,
     filterEndDate
   });
@@ -398,10 +417,12 @@ export default function Countrie() {
             numSelected={selected.length}
             filterName={filterName}
             filterNames={filterNames}
+            filterTaille={filterTaille}
             filterStartDate={filterStartDate}
             filterEndDate={filterEndDate}
             onFilterName={handleFilterByName}
             onFilterNames={handleFilterByNames}
+            onFilterTaille={handleFilterByTaille}
             onFilterStartDate={handleFilterStartDate}
             onFilterEndDate={handleFilterEndDate}
           />

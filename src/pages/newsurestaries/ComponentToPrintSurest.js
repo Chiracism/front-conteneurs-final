@@ -29,16 +29,31 @@ class ComponentToPrintSurest extends React.PureComponent {
 
     return (
       <div>
-        <div className="print-source" style={{ display: 'flex', alignItems: 'center' }}>
+        <div
+          className="print-source"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'center'
+          }}
+        >
           <img
             className="print-source"
-            src="/static/logo_lmc.JPG"
+            src="/static/logoDIRPROVKC.JPG"
             alt="Logo"
-            style={{ width: 150, height: 150 }}
+            justifyContent="center"
+            position="center"
+            alignItems="center"
+            // display="block"
+            // margin-left="auto"
+            // margin-right="auto"
+            // width="50%"
+            style={{ width: 320, height: 150, justifyContent: 'center', position: 'center' }}
           />
           <img
             className="print-source"
-            src="/static/logo_lmc.JPG"
+            src="/static/filigrane.JPG"
             alt="Logo"
             style={{
               position: 'absolute',
@@ -50,7 +65,7 @@ class ComponentToPrintSurest extends React.PureComponent {
               height: 600
             }}
           />
-          <div
+          {/* <div
             className="print-source"
             style={{ textAlign: 'center', color: 'blue', flexGrow: 0.2 }}
           >
@@ -58,11 +73,11 @@ class ComponentToPrintSurest extends React.PureComponent {
             <p style={{ fontWeight: 700, fontSize: '22px' }}>LIGNES MARITIMES CONGOLAISES, SA</p>
             <p style={{ fontWeight: 600, fontSize: '22px' }}>Armement National</p>
             <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
-          </div>
+          </div> */}
         </div>
         <br />
         <h3 className="print-source" style={{ textAlign: 'center' }}>
-          RESTITUTION CAUTION
+          RESTITUTION AVEC/OU SANS CAUTION
         </h3>
         <h3 className="print-source" style={{ textAlign: 'center' }}>
           N° ....../20...
@@ -163,7 +178,7 @@ class ComponentToPrintSurest extends React.PureComponent {
               style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}
             >
               {/* <strong>NGUNGA WAMPILUKULA</strong> */}
-              <strong>Chef de Service CTNR</strong>
+              <strong>Chef de Service Multimodal & Stockage</strong>
             </p>
           </div>
           <div>
@@ -172,7 +187,7 @@ class ComponentToPrintSurest extends React.PureComponent {
               style={{ textAlign: 'right', margin: '0rem 1rem 0rem 1rem' }}
             >
               {/* <strong>NGUNGA WAMPILUKULA</strong> */}
-              <strong>Sous Directeur OPS</strong>
+              <strong>Sous - Directeur OPS</strong>
             </p>
           </div>
         </div>
@@ -206,13 +221,14 @@ class ComponentToPrintSurest extends React.PureComponent {
           style={{
             position: 'absolute',
             bottom: 0,
-            left: 150,
+            left: 60,
             textAlign: 'center',
-            margin: '3rem 0',
+            margin: '1rem 1',
             fontSize: 10
           }}
         >
-          {' '}
+          <img className="print-source" src="/static/Basdepage.JPG" alt="Logo" />
+          {/* {' '}
           <hr style={{ opacity: 1 }} />
           <p style={{ color: 'blue' }}>
             Société Anonyme Unipersonnelle avec conseil d'administration
@@ -226,7 +242,7 @@ class ComponentToPrintSurest extends React.PureComponent {
           <p>
             Commune de la Gombe, Courrier : <a href="mailto:info@lmc.cd">info@lmc.cd</a> Site web :{' '}
             <a href="www.lmc.cd">www.lmc.cd</a>
-          </p>
+          </p> */}
         </div>
       </div>
     );

@@ -49,7 +49,8 @@ export default function SidebarConfig() {
           icon: getIcon(fileTextFill)
         },
         {
-          title: 'Surestaries',
+          // title: 'Surestaries',
+          title: 'Retour Conteneur',
           path: '/dashboard/newsurestaries',
           icon: getIcon(fileTextFill)
         },
@@ -99,7 +100,8 @@ export default function SidebarConfig() {
           icon: getIcon(listFill)
         },
         {
-          title: 'Historique Surestaries',
+          // title: 'Historique Surestaries',
+          title: 'Historique Retour Conteneur',
           path: '/dashboard/historicsurestarie',
           icon: getIcon(listFill)
         },
@@ -257,7 +259,8 @@ export default function SidebarConfig() {
         //   icon: getIcon(fileTextFill)
         // },
         {
-          title: 'Surestarie',
+          // title: 'Surestarie',
+          title: 'Retour Conteneur',
           path: '/dashboard/newsurestaries',
           icon: getIcon(fileTextFill)
         },
@@ -277,7 +280,8 @@ export default function SidebarConfig() {
           icon: getIcon(listFill)
         },
         {
-          title: 'Historique Surestaries',
+          // title: 'Historique Surestaries',
+          title: 'Historique Retour Conteneur',
           path: '/dashboard/historicsurestarie',
           icon: getIcon(listFill)
         },
@@ -310,7 +314,8 @@ export default function SidebarConfig() {
         //   icon: getIcon(fileTextFill)
         // },
         {
-          title: 'Surestarie',
+          // title: 'Surestarie',
+          title: 'Retour Conteneur',
           path: '/dashboard/newsurestaries',
           icon: getIcon(fileTextFill)
         },
@@ -335,7 +340,8 @@ export default function SidebarConfig() {
         //   icon: getIcon(listFill)
         // },
         {
-          title: 'Historique Surestaries',
+          // title: 'Historique Surestaries',
+          title: 'Historique Retour Conteneur',
           path: '/dashboard/historicsurestarie',
           icon: getIcon(listFill)
         },
@@ -363,7 +369,8 @@ export default function SidebarConfig() {
           icon: getIcon(fileTextFill)
         },
         {
-          title: 'Surestarie',
+          // title: 'Surestarie',
+          title: 'Retour Conteneur',
           path: '/dashboard/newsurestaries',
           icon: getIcon(fileTextFill)
         },
@@ -388,7 +395,8 @@ export default function SidebarConfig() {
         //   icon: getIcon(listFill)
         // },
         {
-          title: 'Historique Surestaries',
+          // title: 'Historique Surestaries',
+          title: 'Historique Retour Conteneur',
           path: '/dashboard/historicsurestarie',
           icon: getIcon(listFill)
         },
@@ -434,7 +442,8 @@ export default function SidebarConfig() {
         //   icon: getIcon(fileTextFill)
         // },
         {
-          title: 'Historique Surestaries',
+          // title: 'Historique Surestaries',
+          title: 'Historique Retour Conteneur',
           path: '/dashboard/historicsurestarie',
           icon: getIcon(listFill)
         },

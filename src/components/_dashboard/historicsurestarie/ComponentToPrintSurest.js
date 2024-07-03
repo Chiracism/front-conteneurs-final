@@ -32,13 +32,13 @@ class ComponentToPrintSurest extends React.PureComponent {
         <div className="print-source" style={{ display: 'flex', alignItems: 'center' }}>
           <img
             className="print-source"
-            src="/static/logo_lmc.JPG"
+            src="/static/logoDIRPROVKC.JPG"
             alt="Logo"
             style={{ width: 150, height: 150 }}
           />
           <img
             className="print-source"
-            src="/static/logo_lmc.JPG"
+            src="/static/Filigrane.JPG"
             alt="Logo"
             style={{
               position: 'absolute',
@@ -163,7 +163,7 @@ class ComponentToPrintSurest extends React.PureComponent {
               style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}
             >
               {/* <strong>NGUNGA WAMPILUKULA</strong> */}
-              <strong>Chef de Service CTNR</strong>
+              <strong>Chef de Service Multimodal & Stockage</strong>
             </p>
           </div>
           <div>
@@ -215,7 +215,7 @@ class ComponentToPrintSurest extends React.PureComponent {
           {' '}
           <hr style={{ opacity: 1 }} />
           <p style={{ color: 'blue' }}>
-            Société Anonyme Unipersonnelle avec conseil d'administration
+            Société Anonyme Unipersonnelle avec Conseil d'Administration
           </p>
           <p style={{ color: 'blue' }}>au Capital de 16.474.900.000 CDF</p>
           <p>N°RCCM CD/RCCM/14-B-3622 - ID.NAT. : 01-715-A06030E - N°IMPOT : A0700620H</p>

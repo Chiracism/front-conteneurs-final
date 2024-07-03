@@ -153,6 +153,18 @@ class ComponentToPrint extends React.PureComponent {
           style={{
             position: 'absolute',
             bottom: 0,
+            left: 60,
+            textAlign: 'center',
+            margin: '1rem 1',
+            fontSize: 10
+          }}
+        >
+          <img className="print-source" src="/static/Basdepage.JPG" alt="Logo" />
+        {/* <div
+          className="print-source"
+          style={{
+            position: 'absolute',
+            bottom: 0,
             left: 150,
             textAlign: 'center',
             margin: '3rem 0',
@@ -173,7 +185,7 @@ class ComponentToPrint extends React.PureComponent {
           <p>
             Commune de la Gombe, Courrier : <a href="mailto:info@lmc.cd">info@lmc.cd</a> Site web :{' '}
             <a href="www.lmc.cd">www.lmc.cd</a>
-          </p>
+          </p> */}
         </div>
       </div>
     );

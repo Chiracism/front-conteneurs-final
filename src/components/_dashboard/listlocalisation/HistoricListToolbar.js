@@ -45,10 +45,12 @@ UserListToolbar.propTypes = {
   numSelected: PropTypes.number,
   filterName: PropTypes.string,
   filterNames: PropTypes.string,
+  filterTaille: PropTypes.number,
   filterStartDate: PropTypes.string,
   filterEndDate: PropTypes.string,
   onFilterName: PropTypes.func,
   onFilterNames: PropTypes.func,
+  onFilterTaille: PropTypes.func,
   onFilterStartDate: PropTypes.func,
   onFilterEndDate: PropTypes.func
 };
@@ -57,10 +59,12 @@ export default function UserListToolbar({
   numSelected,
   filterName,
   filterNames,
+  filterTaille,
   filterStartDate,
   filterEndDate,
   onFilterName,
   onFilterNames,
+  onFilterTaille,
   onFilterStartDate,
   onFilterEndDate
 }) {
@@ -80,8 +84,8 @@ export default function UserListToolbar({
       ) : (
         <>
           <SearchStyle
-            value={filterName}
-            onChange={onFilterName}
+            value={filterName || filterTaille}
+            onChange={onFilterName || onFilterTaille}
             placeholder="Chercher le conteneur..."
             startAdornment={
               <InputAdornment position="start">

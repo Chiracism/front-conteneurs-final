@@ -15,7 +15,49 @@ class ComponentToPrint extends React.PureComponent {
 
     return (
       <div>
-        <div className="print-source" style={{ display: 'flex', alignItems: 'center' }}>
+        <div
+          className="print-source"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'center'
+          }}
+        >
+          <img
+            className="print-source"
+            src="/static/logoDIRPROVKC.JPG"
+            alt="Logo"
+            justifyContent="center"
+            position="center"
+            alignItems="center"
+            style={{ width: 320, height: 150, justifyContent: 'center', position: 'center' }}
+          />
+          <img
+            className="print-source"
+            src="/static/filigrane.JPG"
+            alt="Logo"
+            style={{
+              position: 'absolute',
+              zIndex: -1,
+              opacity: 0.1,
+              left: 75,
+              top: 250,
+              width: 600,
+              height: 600
+            }}
+          />
+          {/* <div
+            className="print-source"
+            style={{ textAlign: 'center', color: 'blue', flexGrow: 0.2 }}
+          >
+            <p style={{ fontWeight: 700, fontSize: '22px' }}>République Démocratique du Congo</p>
+            <p style={{ fontWeight: 700, fontSize: '22px' }}>LIGNES MARITIMES CONGOLAISES, SA</p>
+            <p style={{ fontWeight: 600, fontSize: '22px' }}>Armement National</p>
+            <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
+          </div> */}
+        </div>
+        {/* <div className="print-source" style={{ display: 'flex', alignItems: 'center' }}>
           <img
             className="print-source"
             src="/static/logo_lmc.JPG"
@@ -28,14 +70,14 @@ class ComponentToPrint extends React.PureComponent {
             <p style={{ fontWeight: 600, fontSize: '22px' }}>Armement National</p>
             <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
           </div>
-        </div>
-        <h5
+        </div> */}
+        {/* <h5
           className="print-source"
           police="Monotype Corsiva"
           style={{ textAlign: 'left', police: 'Monotype Corsiva' }}
         >
           DIRECTION COMMERCIALE & EXPLOITATION
-        </h5>
+        </h5> */}
         <br />
         <h3 className="print-source" style={{ textAlign: 'center' }}>
           REPERTOIRE DES CONTENEURS
@@ -212,6 +254,43 @@ class ComponentToPrint extends React.PureComponent {
               })}
             </tbody>
           </table>
+        </div>
+        <div
+          className="print-source"
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 60,
+            textAlign: 'center',
+            margin: '1rem 1',
+            fontSize: 10
+          }}
+        >
+          <img
+            className="print-source"
+            src="/static/Basdepage.JPG"
+            alt="Logo"
+            // display="block"
+            // margin-left="auto"
+            // margin-right="auto"
+            // width="50%"
+            // style={{ width: 150, height: 150 }}
+          />
+          {/* {' '}
+          <hr style={{ opacity: 1 }} />
+          <p style={{ color: 'blue' }}>
+            Société Anonyme Unipersonnelle avec conseil d'administration
+          </p>
+          <p style={{ color: 'blue' }}>au Capital de 16.474.900.000 CDF</p>
+          <p>N°RCCM CD/RCCM/14-B-3622 - ID.NAT. : 01-715-A06030E - N°IMPOT : A0700620H</p>
+          <p>
+            Siège Social : Immeuble LMC - AMICONGO, 6ème étage, Avenue des Aviateurs, n°13 Place de
+            la Poste,
+          </p>
+          <p>
+            Commune de la Gombe, Courrier : <a href="mailto:info@lmc.cd">info@lmc.cd</a> Site web :{' '}
+            <a href="www.lmc.cd">www.lmc.cd</a>
+          </p> */}
         </div>
       </div>
     );
