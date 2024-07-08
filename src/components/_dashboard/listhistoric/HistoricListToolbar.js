@@ -44,9 +44,11 @@ const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
 UserListToolbar.propTypes = {
   numSelected: PropTypes.number,
   filterName: PropTypes.string,
+  filterTaille: PropTypes.string,
   filterStartDate: PropTypes.string,
   filterEndDate: PropTypes.string,
   onFilterName: PropTypes.func,
+  onFilterTaille: PropTypes.func,
   onFilterStartDate: PropTypes.func,
   onFilterEndDate: PropTypes.func
 };
@@ -54,9 +56,11 @@ UserListToolbar.propTypes = {
 export default function UserListToolbar({
   numSelected,
   filterName,
+  filterTaille,
   filterStartDate,
   filterEndDate,
   onFilterName,
+  onFilterTaille,
   onFilterStartDate,
   onFilterEndDate
 }) {
@@ -78,13 +82,23 @@ export default function UserListToolbar({
           <SearchStyle
             value={filterName}
             onChange={onFilterName}
-            placeholder="Chercher le conteneur..."
+            placeholder="Chercher par le Numéro..."
             startAdornment={
               <InputAdornment position="start">
                 <Box component={Icon} icon={searchFill} sx={{ color: 'text.disabled' }} />
               </InputAdornment>
             }
           />
+          {/* <SearchStyle
+            value={filterTaille}
+            onChange={onFilterTaille}
+            placeholder="Chercher par la Taille..."
+            startAdornment={
+              <InputAdornment position="start">
+                <Box component={Icon} icon={searchFill} sx={{ color: 'text.disabled' }} />
+              </InputAdornment>
+            }
+          /> */}
           <TextField
             value={filterStartDate}
             onChange={onFilterStartDate}

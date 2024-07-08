@@ -45,7 +45,7 @@ UserListToolbar.propTypes = {
   numSelected: PropTypes.number,
   filterName: PropTypes.string,
   filterNames: PropTypes.string,
-  filterTaille: PropTypes.number,
+  filterTaille: PropTypes.string,
   filterStartDate: PropTypes.string,
   filterEndDate: PropTypes.string,
   onFilterName: PropTypes.func,
@@ -84,9 +84,9 @@ export default function UserListToolbar({
       ) : (
         <>
           <SearchStyle
-            value={filterName || filterTaille}
-            onChange={onFilterName || onFilterTaille}
-            placeholder="Chercher le conteneur..."
+            value={filterName}
+            onChange={onFilterName}
+            placeholder="Chercher par le Numéro"
             startAdornment={
               <InputAdornment position="start">
                 <Box component={Icon} icon={searchFill} sx={{ color: 'text.disabled' }} />
@@ -94,9 +94,9 @@ export default function UserListToolbar({
             }
           />
           {/* <SearchStyle
-            value={filterNames}
-            onChange={onFilterNames}
-            placeholder="Chercher par la Position..."
+            value={filterTaille}
+            onChange={onFilterTaille}
+            placeholder="Chercher par la Taille"
             startAdornment={
               <InputAdornment position="start">
                 <Box component={Icon} icon={searchFill} sx={{ color: 'text.disabled' }} />

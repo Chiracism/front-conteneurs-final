@@ -45,16 +45,16 @@ class ComponentToPrintSurestarie extends React.PureComponent {
         >
           <img
             className="print-source"
-            src="/static/logoDIRPROVKC.JPG"
+            src="/static/DIRPROKC.png"
             alt="Logo"
             justifyContent="center"
             position="center"
             alignItems="center"
-            style={{ width: 320, height: 150, justifyContent: 'center', position: 'center' }}
+            style={{ width: 350, height: 150, justifyContent: 'center', position: 'center' }}
           />
           <img
             className="print-source"
-            src="/static/filigrane.JPG"
+            src="/static/filigrane.png"
             alt="Logo"
             style={{
               position: 'absolute',
@@ -76,8 +76,10 @@ class ComponentToPrintSurestarie extends React.PureComponent {
             <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
           </div> */}
         </div>
+        <br />
+        <br />
         <h3 className="print-source" style={{ textAlign: 'center' }}>
-          HISTORIQUE DES OPERATIONS DE SURESTARIE
+          HISTORIQUE DES OPERATIONS DES RESTITUTIONS AVEC OU SANS SURESTARIE
         </h3>
         {/* <p className="print-source" style={{ textAlign: 'right', margin: '2rem 1rem 3rem 0' }}>
           <strong>Client</strong> : <span>{client}</span>
@@ -228,7 +230,7 @@ class ComponentToPrintSurestarie extends React.PureComponent {
             <strong>Code Swift :</strong> NCDCDKI
           </p>
         </div> */}
-        <div
+        {/* <div
           className="print-source"
           style={{
             position: 'absolute',
@@ -239,7 +241,7 @@ class ComponentToPrintSurestarie extends React.PureComponent {
             fontSize: 10
           }}
         >
-          <img className="print-source" src="/static/Basdepage.JPG" alt="Logo" />
+          <img className="print-source" src="/static/Basdepage.JPG" alt="Logo" /> */}
         {/* <div
           className="print-source"
           style={{
@@ -266,7 +268,7 @@ class ComponentToPrintSurestarie extends React.PureComponent {
             Commune de la Gombe, Courrier : <a href="mailto:info@lmc.cd">info@lmc.cd</a> Site web :{' '}
             <a href="www.lmc.cd">www.lmc.cd</a>
           </p> */}
-        </div>
+        {/* </div> */}
       </div>
     );
   }

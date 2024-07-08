@@ -115,7 +115,7 @@ function applySortFilter(array, comparator, query) {
     if (query.filterTaille) {
       dataFiltered = filter(
         array,
-        (_user) => _user.taille.toLowerCase().indexOf(query.filterName.toLowerCase()) !== -1
+        (_user) => _user.taille.toLowerCase() === query.filterTaille.toLowerCase()
       );
     }
 
@@ -457,7 +457,7 @@ export default function Countrie() {
                         createdAt,
                         name
                       } = row;
-                      const isItemSelected = selected.indexOf(numero) !== -1;
+                      const isItemSelected = selected.indexOf(numero || taille) !== -1;
 
                       return (
                         <TableRow
@@ -594,7 +594,7 @@ export default function Countrie() {
                     <TableRow>
                       <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
                         <SearchNotFound searchQuery={filterName} />
-                        <SearchNotFound searchQuery={filterNames} />
+                        <SearchNotFound searchQuery={filterTaille} />
                       </TableCell>
                     </TableRow>
                   </TableBody>

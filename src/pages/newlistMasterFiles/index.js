@@ -102,13 +102,20 @@ function applySortFilter(array, comparator, query) {
     return a[1] - b[1];
   });
 
-  if (query.filterName || query.filterStartDate || query.filterEndDate) {
+  if (query.filterName || query.filterTaille || query.filterStartDate || query.filterEndDate) {
     let dataFiltered = null;
 
     if (query.filterName) {
       dataFiltered = filter(
         array,
         (_user) => _user.numero.toLowerCase().indexOf(query.filterName.toLowerCase()) !== -1
+      );
+    }
+
+    if (query.filterTaille) {
+      dataFiltered = filter(
+        array,
+        (_user) => _user.taille.toLowerCase() === query.filterTaille.toLowerCase()
       );
     }
 
@@ -158,6 +165,7 @@ export default function Countrie() {
   const [selected, setSelected] = useState([]);
   const [orderBy, setOrderBy] = useState('id');
   const [filterName, setFilterName] = useState('');
+  const [filterTaille, setFilterTaille] = useState('');
   const [filterStartDate, setFilterStartDate] = useState('');
   const [filterEndDate, setFilterEndDate] = useState('');
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -295,6 +303,10 @@ export default function Countrie() {
     setFilterName(event.target.value);
   };
 
+  const handleFilterByTaille = (event) => {
+    setFilterTaille(event.target.value);
+  };
+
   const handleFilterStartDate = (event) => {
     setFilterStartDate(event.target.value);
   };
@@ -307,6 +319,7 @@ export default function Countrie() {
 
   const filteredHistoric = applySortFilter(historic, getComparator(order, orderBy), {
     filterName,
+    filterTaille,
     filterStartDate,
     filterEndDate
   });
@@ -370,9 +383,11 @@ export default function Countrie() {
           <HistoricListToolbar
             numSelected={selected.length}
             filterName={filterName}
+            filterTaille={filterTaille}
             filterStartDate={filterStartDate}
             filterEndDate={filterEndDate}
             onFilterName={handleFilterByName}
+            onFilterTaille={handleFilterByTaille}
             onFilterStartDate={handleFilterStartDate}
             onFilterEndDate={handleFilterEndDate}
           />
@@ -603,6 +618,7 @@ export default function Countrie() {
                     <TableRow>
                       <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
                         <SearchNotFound searchQuery={filterName} />
+                        <SearchNotFound searchQuery={filterTaille} />
                       </TableCell>
                     </TableRow>
                   </TableBody>

@@ -34,16 +34,27 @@ class ComponentToPrintRepara extends React.PureComponent {
 
     return (
       <div>
-        <div className="print-source" style={{ display: 'flex', alignItems: 'center' }}>
+        <div
+          className="print-source"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'center'
+          }}
+        >
           <img
             className="print-source"
-            src="/static/logo_lmc.JPG"
+            src="/static/DIRPROKC.png"
             alt="Logo"
-            style={{ width: 150, height: 150 }}
+            justifyContent="center"
+            position="center"
+            alignItems="center"
+            style={{ width: 350, height: 150, justifyContent: 'center', position: 'center' }}
           />
           <img
             className="print-source"
-            src="/static/logo_lmc.JPG"
+            src="/static/filigrane.png"
             alt="Logo"
             style={{
               position: 'absolute',
@@ -55,7 +66,7 @@ class ComponentToPrintRepara extends React.PureComponent {
               height: 600
             }}
           />
-          <div
+          {/* <div
             className="print-source"
             style={{ textAlign: 'center', color: 'blue', flexGrow: 0.2 }}
           >
@@ -63,75 +74,66 @@ class ComponentToPrintRepara extends React.PureComponent {
             <p style={{ fontWeight: 700, fontSize: '22px' }}>LIGNES MARITIMES CONGOLAISES, SA</p>
             <p style={{ fontWeight: 600, fontSize: '22px' }}>Armement National</p>
             <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
-          </div>
+          </div> */}
         </div>
+        <br />
+        <br />
         <h3 className="print-source" style={{ textAlign: 'center' }}>
           FICHE REPARATION CONTENEUR
         </h3>
         {/* <p className="print-source" style={{ textAlign: 'right', margin: '2rem 1rem 3rem 0' }}>
           <strong>Client</strong> : <span>{client}</span>
         </p> */}
+        <br />
+        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>N° Conteneur</strong> : <span>{numero}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Date Dernière Réparation</strong> : <span>{datedernierereparation}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Type Conteneur</strong> : <span>{typeconteneur}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Taille Conteneur</strong> : <span>{tailleconteneur}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Propriétaire</strong> : <span>{proprietaireid}</span>
         </p>
-        <br />
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Taux</strong> : <span>{taux}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Nombre Heure</strong> : <span>{heure}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Matériel</strong> : <span>{materielid}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Total</strong> : <span>{total}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Numéro Réçu</strong> : <span>{numerorecu}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Société de Réparation</strong> : <span>{societereparation}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Site</strong> : <span>{site}</span>
         </p>
-        <br />
         <p className="print-source" style={{ textAlign: 'left', margin: '0rem 1rem 0rem 1rem' }}>
           {/* '0rem 1rem 0rem 6.8rem' */}
           <strong>Date Dernière Inspection</strong> : <span>{datederniereinspection}</span>
@@ -187,13 +189,14 @@ class ComponentToPrintRepara extends React.PureComponent {
           style={{
             position: 'absolute',
             bottom: 0,
-            left: 150,
+            left: 60,
             textAlign: 'center',
-            margin: '3rem 0',
+            margin: '1rem 1',
             fontSize: 10
           }}
         >
-          {' '}
+          <img className="print-source" src="/static/Basdepage.JPG" alt="Logo" />
+          {/* {' '}
           <hr style={{ opacity: 1 }} />
           <p style={{ color: 'blue' }}>
             Société Anonyme Unipersonnelle avec conseil d'administration
@@ -207,7 +210,7 @@ class ComponentToPrintRepara extends React.PureComponent {
           <p>
             Commune de la Gombe, Courrier : <a href="mailto:info@lmc.cd">info@lmc.cd</a> Site web :{' '}
             <a href="www.lmc.cd">www.lmc.cd</a>
-          </p>
+          </p> */}
         </div>
       </div>
     );

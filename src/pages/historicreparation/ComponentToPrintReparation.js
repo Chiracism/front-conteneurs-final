@@ -26,16 +26,16 @@ class ComponentToPrintReparation extends React.PureComponent {
         >
           <img
             className="print-source"
-            src="/static/logoDIRPROVKC.JPG"
+            src="/static/DIRPROKC.png"
             alt="Logo"
             justifyContent="center"
             position="center"
             alignItems="center"
-            style={{ width: 320, height: 150, justifyContent: 'center', position: 'center' }}
+            style={{ width: 350, height: 150, justifyContent: 'center', position: 'center' }}
           />
           <img
             className="print-source"
-            src="/static/filigrane.JPG"
+            src="/static/filigrane.png"
             alt="Logo"
             style={{
               position: 'absolute',
@@ -57,6 +57,8 @@ class ComponentToPrintReparation extends React.PureComponent {
             <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
           </div> */}
         </div>
+        <br />
+        <br />
         <h3 className="print-source" style={{ textAlign: 'center' }}>
           HISTORIQUE REPARATIONS
         </h3>

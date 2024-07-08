@@ -28,28 +28,39 @@ class ComponentToPrint extends React.PureComponent {
 
     return (
       <div>
-        <div className="print-source" style={{ display: 'flex', alignItems: 'center' }}>
+        <div
+          className="print-source"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'center'
+          }}
+        >
           <img
             className="print-source"
-            src="/static/logo_lmc.JPG"
+            src="/static/logoDIRPROVKC.JPG"
             alt="Logo"
-            style={{ width: 150, height: 150 }}
+            justifyContent="center"
+            position="center"
+            alignItems="center"
+            style={{ width: 320, height: 150, justifyContent: 'center', position: 'center' }}
           />
           <img
             className="print-source"
-            src="/static/logo_lmc.JPG"
+            src="/static/filigrane.JPG"
             alt="Logo"
             style={{
               position: 'absolute',
               zIndex: -1,
-              opacity: 0.1,
+              opacity: 0.5,
               left: 75,
               top: 250,
               width: 600,
               height: 600
             }}
           />
-          <div
+          {/* <div
             className="print-source"
             style={{ textAlign: 'center', color: 'blue', flexGrow: 0.2 }}
           >
@@ -57,7 +68,7 @@ class ComponentToPrint extends React.PureComponent {
             <p style={{ fontWeight: 700, fontSize: '22px' }}>LIGNES MARITIMES CONGOLAISES, SA</p>
             <p style={{ fontWeight: 600, fontSize: '22px' }}>Armement National</p>
             <hr style={{ opacity: 1, color: 'blue', backgroundColor: 'blue', height: '3px' }} />
-          </div>
+          </div> */}
         </div>
         <h3 className="print-source" style={{ textAlign: 'center' }}>
           FICHE CONTENEUR
@@ -170,12 +181,14 @@ class ComponentToPrint extends React.PureComponent {
           className="print-source"
           style={{
             position: 'absolute',
-            bottom: '15%',
-            right: 0,
-            textAlign: 'right',
-            margin: '3rem 1rem 3rem 0'
+            bottom: 0,
+            left: 60,
+            textAlign: 'center',
+            margin: '1rem 1',
+            fontSize: 10
           }}
         >
+          <img className="print-source" src="/static/Basdepage.JPG" alt="Logo" />
           {/* <p>
             <strong>TVA</strong>
           </p> */}

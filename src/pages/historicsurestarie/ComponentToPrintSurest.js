@@ -27,16 +27,16 @@ class ComponentToPrintSurest extends React.PureComponent {
         >
           <img
             className="print-source"
-            src="/static/logoDIRPROVKC.JPG"
+            src="/static/DIRPROKC.png"
             alt="Logo"
             justifyContent="center"
             position="center"
             alignItems="center"
-            style={{ width: 320, height: 150, justifyContent: 'center', position: 'center' }}
+            style={{ width: 350, height: 150, justifyContent: 'center', position: 'center' }}
           />
           <img
             className="print-source"
-            src="/static/filigrane.JPG"
+            src="/static/filigrane.png"
             alt="Logo"
             style={{
               position: 'absolute',
@@ -60,7 +60,7 @@ class ComponentToPrintSurest extends React.PureComponent {
         </div>
         <br />
         <h3 className="print-source" style={{ textAlign: 'center' }}>
-          RESTITUTION CAUTION AVEC OU SANS SURESTARIE
+          RESTITUTION AVEC OU SANS SURESTARIE
         </h3>
         <h3 className="print-source" style={{ textAlign: 'center' }}>
           N° ....../20...
@@ -202,7 +202,7 @@ class ComponentToPrintSurest extends React.PureComponent {
             fontSize: 10
           }}
         >
-          <img className="print-source" src="/static/Basdepage.JPG" alt="Logo" />
+          <img className="print-source" src="/static/Basdepage.png" alt="Logo" />
         {/* <div
           className="print-source"
           style={{
