@@ -73,7 +73,7 @@ class ComponentToPrintSurest extends React.PureComponent {
         </div>
         <br />
         <h3 className="print-source" style={{ textAlign: 'center' }}>
-          RESTITUTION AVEC/OU SANS CAUTION
+          RESTITUTION AVEC/OU SANS SURESTARIE
         </h3>
         <h3 className="print-source" style={{ textAlign: 'center' }}>
           N° ....../20...
