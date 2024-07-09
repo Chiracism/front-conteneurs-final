@@ -165,8 +165,6 @@ class ComponentToPrintSurest extends React.PureComponent {
         <br />
         <br />
         <br />
-        <br />
-        <br />
         <div>
           <div>
             <p
@@ -187,6 +185,7 @@ class ComponentToPrintSurest extends React.PureComponent {
             </p>
           </div>
         </div>
+        <br />
         <div
           className="print-source"
           style={{
